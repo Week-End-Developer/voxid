@@ -1,0 +1,44 @@
+:root {
+  --nav-background: #21263A;
+  --background: #F0F4F2;
+  --border-1: #D6D9D8;
+  --foreground: #21263A;
+  --accent-1: #C7CEE8;
+  --accent-2: #D0D34D;
+  
+  /* Enhanced Gradients */
+  --gradient-nav: linear-gradient(165deg, #21263A 0%, #2d3347 50%, #21263A 100%);
+  --gradient-accent: linear-gradient(135deg, #C7CEE8 0%, #D0D34D 50%, #C7CEE8 100%);
+  --gradient-subtle: linear-gradient(165deg, #F0F4F2 0%, #D6D9D8 50%, #F0F4F2 100%);
+  --gradient-active: linear-gradient(135deg, #D0D34D 0%, #C7CEE8 50%, #D0D34D 100%);
+  
+  /* Enhanced Shadows */
+  --shadow-sm: 0 2px 4px rgba(33, 38, 58, 0.1);
+  --shadow-md: 0 4px 8px rgba(33, 38, 58, 0.15);
+  --shadow-lg: 0 8px 16px rgba(33, 38, 58, 0.15);
+  --shadow-inner: inset 0 2px 4px rgba(33, 38, 58, 0.05);
+  
+  /* Enhanced Animations */
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Glass Effect */
+  --glass-background: rgba(240, 244, 242, 0.7);
+  --glass-border: rgba(214, 217, 216, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nav-background: #21263A;
+    --background: #2d3347;
+    --foreground: #F0F4F2;
+    --border-1: rgba(214, 217, 216, 0.2);
+    --gradient-nav: linear-gradient(165deg, #21263A 0%, #2d3347 50%, #21263A 100%);
+    --gradient-accent: linear-gradient(135deg, #D0D34D 0%, #C7CEE8 50%, #D0D34D 100%);
+    --gradient-subtle: linear-gradient(165deg, #2d3347 0%, #21263A 50%, #2d3347 100%);
+    --gradient-active: linear-gradient(135deg, #C7CEE8 0%, #D0D34D 50%, #C7CEE8 100%);
+    --glass-background: rgba(33, 38, 58, 0.7);
+    --glass-border: rgba(214, 217, 216, 0.1);
+  }
+} 

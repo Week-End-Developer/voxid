@@ -117,25 +117,35 @@ export default function BatchProcessing() {
     const paginatedData = filteredData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 
     return (
-        <Paper sx={{ padding: 2, background: '#212529', borderRadius: '12px' }}>
+        <Paper sx={{ 
+            padding: 2, 
+            background: 'var(--glass-background)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid var(--glass-border)',
+            borderRadius: '20px',
+            marginBottom: '20px',
+            color: 'var(--color-light)'
+        }}>
             <div className="card-header">Ses Kayıtları</div>
 
             {/* Görsel Dosya Yükleme Kutusu */}
             <Box
                 sx={{
-                    border: '2px dashed #aaa',
-                    borderRadius: 2,
+                    border: '1px solid var(--glass-border)',
+                    borderRadius: '12px',
                     padding: 4,
                     textAlign: 'center',
                     cursor: 'default',
-                    backgroundColor: '#f9f9f9',
+                    background: 'var(--glass-background)',
+                    backdropFilter: 'blur(12px)',
                     mb: 3,
+                    color: 'var(--color-light)'
                 }}
             >
-                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                <Typography variant="body1" sx={{ fontWeight: 'bold', color: 'var(--color-light)' }}>
                     Dosyaları bırakın veya yüklemek için tıklayın
                 </Typography>
-                <Typography variant="caption" color="text.secondary">
+                <Typography variant="caption" sx={{ color: 'var(--color-neutral)' }}>
                     (Maks. 100.000 ses dosyası yüklenebilir)
                 </Typography>
             </Box>
@@ -166,7 +176,23 @@ export default function BatchProcessing() {
                     YENİ İşlem
                 </Button>
             </Box>
-            <TableContainer>
+            <TableContainer component={Paper} sx={{ 
+                background: 'var(--glass-background)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid var(--glass-border)',
+                borderRadius: '12px',
+                '& .MuiTableCell-root': {
+                    color: 'var(--color-light)',
+                    borderColor: 'var(--glass-border)'
+                },
+                '& .MuiTableHead-root': {
+                    background: 'var(--color-navy)',
+                    '& .MuiTableCell-root': {
+                        color: 'var(--color-light)',
+                        fontWeight: 600
+                    }
+                }
+            }}>
                 <Table size="small" className='custom-table'>
                     <TableHead>
                         <TableRow>
@@ -222,7 +248,13 @@ export default function BatchProcessing() {
             </TableContainer>
 
             <TablePagination
-                sx={{ color: '#ced4da' }}
+                sx={{ 
+                    color: 'var(--color-light)',
+                    '& .MuiSelect-icon': { color: 'var(--color-light)' },
+                    '& .MuiTablePagination-select': { color: 'var(--color-light)' },
+                    '& .MuiTablePagination-selectLabel': { color: 'var(--color-light)' },
+                    '& .MuiTablePagination-displayedRows': { color: 'var(--color-light)' }
+                }}
                 rowsPerPageOptions={[5, 10, 25]}
                 component="div"
                 count={filteredData.length}

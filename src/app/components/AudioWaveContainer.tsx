@@ -1,19 +1,25 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import EnvelopeWave from './EnvelopeWave';
 
 const AudioWaveContainer: React.FC = () => {
-  const generateWaveData = () => {
+  const [waveData, setWaveData] = useState<number[]>([]);
+
+  useEffect(() => {
     const points = 100;
-    return Array.from({ length: points }, () => Math.random() * 0.8 + 0.2);
-  };
-  
-  const waveData = generateWaveData();
+    const data = Array.from({ length: points }, () => Math.random() * 0.8 + 0.2);
+    setWaveData(data);
+  }, []);
   
   return (
-    <div className="flex flex-col items-center w-full">
-      <div className="w-full h-64 flex items-center justify-center">
-        <EnvelopeWave data={waveData} />
-      </div>
+    <div style={{ 
+      width: '100%',
+      height: '60px',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      {waveData.length > 0 && <EnvelopeWave data={waveData} />}
     </div>
   );
 };

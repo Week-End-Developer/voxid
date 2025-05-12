@@ -1,0 +1,130 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dashboard__analytics {
+  flex: 4;
+  min-width: 500px;
+}
+
+.dashboard__daily {
+  flex: 1;
+  min-width: 200px;
+}
+
+.dashboard__records,
+.dashboard__service,
+.dashboard__load {
+  flex: 2;
+  min-width: 200px;
+}
+
+.dashboard__success-rate {
+  margin-bottom: 12px;
+}
+
+.dashboard__highlight {
+  font-size: 18px;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+.dashboard__stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dashboard__stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dashboard__stat-value {
+  font-size: 18px;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+.dashboard__stat-label {
+  color: var(--foreground);
+  opacity: 0.8;
+}
+
+.dashboard__divider {
+  width: 1px;
+  background: var(--border-1);
+  opacity: 0.5;
+}
+
+.dashboard__daily-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard__daily-value {
+  font-size: 30px;
+  color: var(--foreground);
+}
+
+.dashboard__trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dashboard__trend--negative {
+  color: #E34B26;
+}
+
+.dashboard__trend-icon {
+  font-size: 18px;
+}
+
+.dashboard__trend-value {
+  color: inherit;
+}
+
+.dashboard__trend-label {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-left: 8px;
+}
+
+.dashboard__records-value,
+.dashboard__service-value {
+  font-size: 30px;
+  color: var(--foreground);
+  margin-bottom: 12px;
+}
+
+.dashboard__service-period {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-left: 8px;
+}
+
+.dashboard__records-stats,
+.dashboard__service-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.dashboard__gauge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+} 

@@ -2,14 +2,11 @@
 
 import { GaugeContainer, GaugeReferenceArc, GaugeValueArc, useGaugeState } from '@mui/x-charts';
 
-
 export default function Overview() {
-
     function GaugePointer() {
         const { valueAngle, outerRadius, cx, cy } = useGaugeState();
 
         if (valueAngle === null) {
-            // No value to display
             return null;
         }
 
@@ -30,116 +27,94 @@ export default function Overview() {
     }
 
     return (
-        <>
-            <div style={{ color: '#ced4da', display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '20px' }}>
-                <div className="styled-card-1" style={{ flex: '4', minWidth: '500px' }}>
-                    <div className="card-header">VoxID Analitik</div>
-                    <div style={{ marginBottom: '12px' }}>Toplam <span style={{ fontSize: '18px', color: '#45cb85', fontWeight: 'bolder' }}>92.3%</span> Başarı Oranı</div>
-                    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ fontSize: '18px', color: '#45cb85', fontWeight: 'bolder' }}>25%</span>
-                            <span>Tanımlı Ses</span>
+        <div className="dashboard">
+            <div className="dashboard__row">
+                <div className="card dashboard__analytics">
+                    <h2 className="card__header">VoxID Analitik</h2>
+                    <div className="dashboard__success-rate">
+                        Toplam <span className="dashboard__highlight">92.3%</span> Başarı Oranı
+                    </div>
+                    <div className="dashboard__stats">
+                        <div className="dashboard__stat-item">
+                            <span className="dashboard__stat-value">25%</span>
+                            <span className="dashboard__stat-label">Tanımlı Ses</span>
                         </div>
-                        <div style={{ borderRight: '1px solid #32383e' }}></div>
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ fontSize: '18px', color: '#45cb85', fontWeight: 'bolder' }}>1.9K</span>
-                            <span>Görüşme</span>
+                        <div className="dashboard__divider"></div>
+                        <div className="dashboard__stat-item">
+                            <span className="dashboard__stat-value">1.9K</span>
+                            <span className="dashboard__stat-label">Görüşme</span>
                         </div>
-                        <div style={{ borderRight: '1px solid #32383e' }}></div>
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ fontSize: '18px', color: '#45cb85', fontWeight: 'bolder' }}>112</span>
-                            <span>Yeni Profil</span>
+                        <div className="dashboard__divider"></div>
+                        <div className="dashboard__stat-item">
+                            <span className="dashboard__stat-value">112</span>
+                            <span className="dashboard__stat-label">Yeni Profil</span>
                         </div>
-                        <div style={{ borderRight: '1px solid #32383e' }}></div>
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ fontSize: '18px', color: '#45cb85', fontWeight: 'bolder' }}>89%</span>
-                            <span>Doğrulama</span>
+                        <div className="dashboard__divider"></div>
+                        <div className="dashboard__stat-item">
+                            <span className="dashboard__stat-value">89%</span>
+                            <span className="dashboard__stat-label">Doğrulama</span>
                         </div>
                     </div>
                 </div>
 
-                <div className="styled-card-1" style={{ flex: '1' }}>
-                    <div className="card-header">Ortalama Günlük İşlem</div>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <span style={{ fontSize: '30px', marginBottom: '12px' }}>2.310</span>
-                        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-                            <span style={{ color: '#45cb85', marginRight: '2px', fontSize: '18px' }} className="material-symbols-outlined">
-                                trending_up
-                            </span>
-                            <span style={{ color: '#45cb85' }}>5.2%</span>
-                            <span style={{ fontSize: '12px', opacity: '0.7', marginLeft: '8px' }}>önceki güne göre</span>
+                <div className="card dashboard__daily">
+                    <h2 className="card__header">Ortalama Günlük İşlem</h2>
+                    <div className="dashboard__daily-stats">
+                        <span className="dashboard__daily-value">2.310</span>
+                        <div className="dashboard__trend">
+                            <span className="dashboard__trend-icon material-symbols-outlined">trending_up</span>
+                            <span className="dashboard__trend-value">5.2%</span>
+                            <span className="dashboard__trend-label">önceki güne göre</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div style={{ color: '#ced4da', display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
-                <div className="styled-card-1" style={{ flex: '2', minWidth: '200px' }}>
-                    <div className="card-header">Son İşlenen Ses Kayıtları</div>
-                    <div style={{ fontSize: '30px', marginBottom: '12px' }}>1.240</div>
-                    <div style={{ display: 'flex', alignItems: 'flex-end', marginBottom: '12px' }}>
-                        <span style={{ color: 'red', marginRight: '2px', fontSize: '18px' }} className="material-symbols-outlined">
-                            trending_down
-                        </span>
-                        <span style={{ color: 'red' }}>3.6%</span>
-                        <span style={{ fontSize: '12px', opacity: '0.7', marginLeft: '8px' }}>önceki güne göre</span>
+            <div className="dashboard__row">
+                <div className="card dashboard__records">
+                    <h2 className="card__header">Son İşlenen Ses Kayıtları</h2>
+                    <div className="dashboard__records-value">1.240</div>
+                    <div className="dashboard__trend dashboard__trend--negative">
+                        <span className="dashboard__trend-icon material-symbols-outlined">trending_down</span>
+                        <span className="dashboard__trend-value">3.6%</span>
+                        <span className="dashboard__trend-label">önceki güne göre</span>
                     </div>
-                    <div>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    Başarılı
-                                </div>
-                                <div>
-                                    980
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    Beklemede
-                                </div>
-                                <div>
-                                    260
-                                </div>
-                            </div>
+                    <div className="dashboard__records-stats">
+                        <div className="info-row">
+                            <span className="info-row__label">Başarılı</span>
+                            <span className="info-row__value">980</span>
+                        </div>
+                        <div className="info-row">
+                            <span className="info-row__label">Beklemede</span>
+                            <span className="info-row__value">260</span>
                         </div>
                     </div>
                 </div>
-                <div className="styled-card-1" style={{ flex: '2', minWidth: '200px' }}>
-                    <div className="card-header">Servis Sorgulanma Kayıtları</div>
-                    <div style={{ fontSize: '30px', marginBottom: '12px' }}>15.896 <span style={{ fontSize: '12px', opacity: '0.7', marginLeft: '8px' }}>son 7 gün</span></div>
-                    <div>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    Yeni Ses Kayıtları
-                                </div>
-                                <div>
-                                    14.890
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    Tekrar Eden Eski Kayıtları
-                                </div>
-                                <div>
-                                    1.016
-                                </div>
-                            </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    Yanıt Süresi Ortalama
-                                </div>
-                                <div>
-                                    1.3 ms
-                                </div>
-                            </div>
+
+                <div className="card dashboard__service">
+                    <h2 className="card__header">Servis Sorgulanma Kayıtları</h2>
+                    <div className="dashboard__service-value">
+                        15.896 <span className="dashboard__service-period">son 7 gün</span>
+                    </div>
+                    <div className="dashboard__service-stats">
+                        <div className="info-row">
+                            <span className="info-row__label">Yeni Ses Kayıtları</span>
+                            <span className="info-row__value">14.890</span>
+                        </div>
+                        <div className="info-row">
+                            <span className="info-row__label">Tekrar Eden Eski Kayıtları</span>
+                            <span className="info-row__value">1.016</span>
+                        </div>
+                        <div className="info-row">
+                            <span className="info-row__label">Yanıt Süresi Ortalama</span>
+                            <span className="info-row__value">1.3 ms</span>
                         </div>
                     </div>
                 </div>
-                <div className="styled-card-1" style={{ flex: '2', minWidth: '200px' }}>
-                    <div className="card-header">Sistem Yoğunluk Oranı Anlık</div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+
+                <div className="card dashboard__load">
+                    <h2 className="card__header">Sistem Yoğunluk Oranı Anlık</h2>
+                    <div className="dashboard__gauge">
                         <GaugeContainer
                             width={200}
                             height={124}
@@ -156,15 +131,14 @@ export default function Overview() {
                                 textAnchor="middle"
                                 dominantBaseline="middle"
                                 fontSize="18"
-                                fill="#ced4da"
+                                fill="currentColor"
                             >
                                 85%
                             </text>
                         </GaugeContainer>
-
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

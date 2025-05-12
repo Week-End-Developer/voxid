@@ -1,0 +1,115 @@
+.card {
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--glass-background);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-1);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.card__header {
+  font-size: 22px;
+  color: var(--foreground);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-1);
+  margin-bottom: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.table-container {
+  background: var(--glass-background);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  backdrop-filter: blur(12px);
+}
+
+.table__header {
+  color: var(--background) !important;
+  background: var(--gradient-nav);
+  border-bottom: 1px solid var(--glass-border);
+  font-weight: 600;
+  padding: 16px 20px;
+  letter-spacing: -0.5px;
+}
+
+.table__cell {
+  color: var(--foreground) !important;
+  border-bottom: 1px solid var(--glass-border);
+  padding: 16px 20px;
+  transition: var(--transition-fast);
+}
+
+.table__row {
+  transition: var(--transition-normal);
+  background: transparent;
+}
+
+.table__row:hover {
+  background: var(--gradient-accent);
+  transform: scale(1.01);
+}
+
+.table__row:hover .table__cell {
+  color: var(--nav-background) !important;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  background: var(--glass-background);
+  padding: 20px;
+  border-radius: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--glass-border);
+  color: var(--foreground);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.info-row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: var(--transition-slow);
+  z-index: 0;
+}
+
+.info-row:hover::before {
+  opacity: 0.9;
+}
+
+.info-row:hover {
+  border-color: var(--accent-2);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: var(--shadow-lg);
+  color: var(--nav-background);
+}
+
+.info-row__content {
+  position: relative;
+  z-index: 1;
+} 

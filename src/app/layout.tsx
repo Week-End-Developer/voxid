@@ -30,50 +30,56 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300"
           rel="stylesheet"
         />
+        <link
+          href="https://vercel.com/font/geist-sans"
+          rel="stylesheet"
+        />
       </head>
       <body>
-        <div className="main-container">
-          <aside>
-            <nav>
-              <div className="nav-top">
-                <Image
-                  src="/logo.jpg"
-                  alt="Logo"
-                  width={184}
-                  height={104}
-                  priority
-                />
+        <div className="layout">
+          <aside className="layout__sidebar">
+            <nav className="layout__nav">
+              <div className="nav">
+                <div className="nav__logo">
+                  <Image
+                    src="/logo.jpg"
+                    alt="Logo"
+                    width={184}
+                    height={104}
+                    priority
+                  />
+                </div>
+                <div className="nav__menu">
+                  {navItems.map(({ href, icon, label }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className={`nav__link ${pathname === href ? "nav__link--active" : ""}`}>
+                      <span className="material-symbols-outlined">{icon}</span>
+                      {label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div className="nav-middle">
-                {navItems.map(({ href, icon, label }) => (
-                  <Link
-                    key={href}
-                    href={href}
-                    className={`${pathname === href ? "active" : ""}`}>
-                    <span className="material-symbols-outlined">{icon}</span>
-                    {label}
-                  </Link>
-                ))}
-              </div>
-              <div className="nav-bottom">{/* Footer içeriği */}</div>
             </nav>
           </aside>
-          <main>
-            <div className="top-bar">
-              <div className="top-bar-profile-container">
+          <main className="layout__main">
+            <div className="layout__topbar">
+              <div className="profile">
                 <Image
                   src="/profile.png"
                   alt="Profil Fotoğrafı"
                   width={40}
                   height={40}
+                  className="profile__image"
                 />
-                <div className="top-bar-profile-container-name">
-                  <span>Adam Smith</span>
-                  <span className="title">Administrator</span>
+                <div className="profile__info">
+                  <span className="profile__name">Adam Smith</span>
+                  <span className="profile__title">Administrator</span>
                 </div>
               </div>
             </div>
-            <div className="content">
+            <div className="layout__content">
               {children}
             </div>
           </main>

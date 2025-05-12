@@ -1,13 +1,13 @@
 // app/dashboard/page.tsx
 'use client';
 
+import { useState } from 'react';
 import {
     Box,
     Paper,
     Typography,
-    Grid,
-    LinearProgress,
     Chip,
+    LinearProgress,
     Table,
     TableBody,
     TableCell,
@@ -15,9 +15,11 @@ import {
     TableHead,
     TableRow,
 } from '@mui/material';
-import { useState } from 'react';
+import { Theme } from '@mui/material/styles';
+import { SxProps } from '@mui/system';
 
 type SystemStatus = 'healthy' | 'warning' | 'error';
+
 type Analysis = {
     id: number;
     timestamp: string;
@@ -125,8 +127,8 @@ export default function Monitoring() {
                     </Typography>
                 </Box>
                 
-                <Grid container spacing={3}>
-                    <Grid item xs={4}>
+                <Box sx={{ display: 'flex', gap: 3 }}>
+                    <Box sx={{ flex: 1 }}>
                         <Box sx={customStyles.metricCard}>
                             <Typography sx={customStyles.metricLabel}>CPU Kullanımı</Typography>
                             <Typography sx={customStyles.metricValue}>{cpuUsage}%</Typography>
@@ -141,8 +143,8 @@ export default function Monitoring() {
                                 }}
                             />
                         </Box>
-                    </Grid>
-                    <Grid item xs={4}>
+                    </Box>
+                    <Box sx={{ flex: 1 }}>
                         <Box sx={customStyles.metricCard}>
                             <Typography sx={customStyles.metricLabel}>Bellek Kullanımı</Typography>
                             <Typography sx={customStyles.metricValue}>{memoryUsage}%</Typography>
@@ -157,8 +159,8 @@ export default function Monitoring() {
                                 }}
                             />
                         </Box>
-                    </Grid>
-                    <Grid item xs={4}>
+                    </Box>
+                    <Box sx={{ flex: 1 }}>
                         <Box sx={customStyles.metricCard}>
                             <Typography sx={customStyles.metricLabel}>Disk Kullanımı</Typography>
                             <Typography sx={customStyles.metricValue}>{diskUsage}%</Typography>
@@ -173,8 +175,8 @@ export default function Monitoring() {
                                 }}
                             />
                         </Box>
-                    </Grid>
-                </Grid>
+                    </Box>
+                </Box>
             </Paper>
 
             {/* Recent Analyses */}
@@ -213,8 +215,8 @@ export default function Monitoring() {
             </Paper>
 
             {/* System Metrics */}
-            <Grid container spacing={3}>
-                <Grid item xs={6}>
+            <Box sx={{ display: 'flex', gap: 3 }}>
+                <Box sx={{ flex: 1 }}>
                     <Paper sx={customStyles.card}>
                         <Typography sx={customStyles.header}>Analiz Metrikleri</Typography>
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -232,8 +234,8 @@ export default function Monitoring() {
                             </Box>
                         </Box>
                     </Paper>
-                </Grid>
-                <Grid item xs={6}>
+                </Box>
+                <Box sx={{ flex: 1 }}>
                     <Paper sx={customStyles.card}>
                         <Typography sx={customStyles.header}>Sistem Metrikleri</Typography>
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -251,8 +253,8 @@ export default function Monitoring() {
                             </Box>
                         </Box>
                     </Paper>
-                </Grid>
-            </Grid>
+                </Box>
+            </Box>
         </Box>
     );
 }

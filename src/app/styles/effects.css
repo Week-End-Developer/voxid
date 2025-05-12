@@ -1,0 +1,76 @@
+/* Glass Effect */
+.glass {
+  background: var(--glass-background);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-normal);
+}
+
+.glass:hover {
+  backdrop-filter: blur(16px);
+  border-color: var(--accent-2);
+}
+
+/* Shadow Effects */
+.shadow {
+  transition: var(--transition-normal);
+}
+
+.shadow--sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow--md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow--lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow--inner {
+  box-shadow: var(--shadow-inner);
+}
+
+/* Hover Effects */
+.hover-scale {
+  transition: var(--transition-normal);
+}
+
+.hover-scale:hover {
+  transform: scale(1.01);
+}
+
+.hover-lift {
+  transition: var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-accent:hover {
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+/* Gradient Effects */
+.gradient {
+  transition: var(--transition-normal);
+}
+
+.gradient--nav {
+  background: var(--gradient-nav);
+}
+
+.gradient--accent {
+  background: var(--gradient-accent);
+}
+
+.gradient--subtle {
+  background: var(--gradient-subtle);
+}
+
+.gradient--active {
+  background: var(--gradient-active);
+} 

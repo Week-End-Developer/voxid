@@ -13,18 +13,18 @@
 .dashboard__analytics {
   flex: 4;
   min-width: 500px;
-  background: var(--glass-background);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  padding: 24px;
-  transition: all 0.3s ease;
 }
 
-.dashboard__analytics:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent-2);
-  transform: translateY(-2px);
+.dashboard__daily {
+  flex: 1;
+  min-width: 200px;
+}
+
+.dashboard__records,
+.dashboard__service,
+.dashboard__load {
+  flex: 2;
+  min-width: 200px;
 }
 
 .dashboard__analytics-header {
@@ -35,12 +35,9 @@
 
 .dashboard__analytics-icon {
   font-size: 24px;
-  color: var(--accent-2);
-  opacity: 0.8;
 }
 
 .dashboard__success-rate {
-  background: rgba(227, 75, 38, 0.1);
   border-radius: 12px;
   padding: 16px;
 }
@@ -61,7 +58,6 @@
 .dashboard__success-rate-value {
   font-size: 24px;
   font-weight: 600;
-  color: var(--accent-2);
 }
 
 .dashboard__success-rate-bar {
@@ -93,11 +89,6 @@
   gap: 8px;
   padding: 16px 8px;
   border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.dashboard__stat-item:hover {
-  background: rgba(227, 75, 38, 0.1);
 }
 
 .dashboard__stat-icon-wrapper {
@@ -128,28 +119,6 @@
   opacity: 0.8;
 }
 
-.dashboard__divider {
-  display: none;
-}
-
-.dashboard__daily {
-  flex: 1;
-  min-width: 200px;
-}
-
-.dashboard__records,
-.dashboard__service,
-.dashboard__load {
-  flex: 2;
-  min-width: 200px;
-}
-
-.dashboard__highlight {
-  font-size: 18px;
-  color: var(--accent-2);
-  font-weight: 600;
-}
-
 .dashboard__daily-stats {
   display: flex;
   flex-direction: column;
@@ -165,10 +134,11 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  color: var(--accent-2);
 }
 
 .dashboard__trend--negative {
-  color: #E34B26;
+  color: var(--color-coral);
 }
 
 .dashboard__trend-icon {

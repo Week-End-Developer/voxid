@@ -17,6 +17,15 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 
+type SystemStatus = 'healthy' | 'warning' | 'error';
+type Analysis = {
+    id: number;
+    timestamp: string;
+    duration: string;
+    status: string;
+    accuracy: string;
+};
+
 const customStyles = {
     card: {
         background: 'var(--glass-background)',
@@ -89,12 +98,12 @@ const customStyles = {
 };
 
 export default function Monitoring() {
-    const [systemStatus] = useState('healthy');
+    const [systemStatus] = useState<SystemStatus>('healthy');
     const [cpuUsage] = useState(45);
     const [memoryUsage] = useState(62);
     const [diskUsage] = useState(28);
 
-    const recentAnalyses = [
+    const recentAnalyses: Analysis[] = [
         { id: 1, timestamp: '2024-03-20 14:30:22', duration: '2.5s', status: 'Completed', accuracy: '98%' },
         { id: 2, timestamp: '2024-03-20 14:29:15', duration: '3.1s', status: 'Completed', accuracy: '96%' },
         { id: 3, timestamp: '2024-03-20 14:28:03', duration: '2.8s', status: 'Completed', accuracy: '97%' },

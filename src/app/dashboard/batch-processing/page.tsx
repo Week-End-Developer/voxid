@@ -128,7 +128,6 @@ export default function BatchProcessing() {
         }}>
             <div className="card-header">Ses Kayıtları</div>
 
-            {/* Görsel Dosya Yükleme Kutusu */}
             <Box
                 sx={{
                     border: '1px solid var(--glass-border)',

@@ -9,6 +9,7 @@ import {
     Paper,
     TextField,
     InputAdornment,
+    LinearProgress,
 } from '@mui/material';
 import AudioWaveContainer from "@/app/components/AudioWaveContainer";
 
@@ -19,7 +20,7 @@ export default function VoiceComparison() {
             <div style={{ display: 'flex', gap: '20px' }}>
                 {/* First Voice Profile */}
                 <div className="styled-card-1" style={{ flex: 1, borderRadius: '16px' }}>
-                    <div className="card-header">Ses 1 - Dosya Yükle</div>
+                    <div className="card-header">Ses 1</div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
                             <Image
@@ -108,13 +109,20 @@ export default function VoiceComparison() {
                             <Typography variant="body2" style={{ marginBottom: '8px' }}>
                                 Ses Frekansı: 450 Hz
                             </Typography>
-                            <div style={{ 
-                                height: '8px', 
-                                background: 'var(--color-coral)', 
-                                width: '75%', 
-                                borderRadius: '4px',
-                                marginBottom: '16px'
-                            }} />
+                            <LinearProgress
+                                variant="determinate"
+                                value={75}
+                                sx={{
+                                    height: 8,
+                                    borderRadius: 4,
+                                    marginBottom: 2,
+                                    backgroundColor: 'rgba(227, 75, 38, 0.1)',
+                                    '& .MuiLinearProgress-bar': {
+                                        backgroundColor: `rgba(227, 75, 38, ${0.4 + (75/100) * 0.6})`,
+                                        transition: 'all 0.4s ease'
+                                    }
+                                }}
+                            />
                             <AudioWaveContainer />
                         </div>
                     </div>
@@ -122,7 +130,7 @@ export default function VoiceComparison() {
 
                 {/* Second Voice Profile */}
                 <div className="styled-card-1" style={{ flex: 1, borderRadius: '16px' }}>
-                    <div className="card-header">Ses 2 - Dosya Yükle</div>
+                    <div className="card-header">Ses 2</div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
                             <Image
@@ -211,13 +219,20 @@ export default function VoiceComparison() {
                             <Typography variant="body2" style={{ marginBottom: '8px' }}>
                                 Ses Frekansı: 420 Hz
                             </Typography>
-                            <div style={{ 
-                                height: '8px', 
-                                background: 'var(--color-coral)', 
-                                width: '65%', 
-                                borderRadius: '4px',
-                                marginBottom: '16px'
-                            }} />
+                            <LinearProgress
+                                variant="determinate"
+                                value={65}
+                                sx={{
+                                    height: 8,
+                                    borderRadius: 4,
+                                    marginBottom: 2,
+                                    backgroundColor: 'rgba(227, 75, 38, 0.1)',
+                                    '& .MuiLinearProgress-bar': {
+                                        backgroundColor: `rgba(227, 75, 38, ${0.4 + (65/100) * 0.6})`,
+                                        transition: 'all 0.4s ease'
+                                    }
+                                }}
+                            />
                             <AudioWaveContainer />
                         </div>
                     </div>
@@ -232,13 +247,20 @@ export default function VoiceComparison() {
                         <Typography variant="body2" style={{ marginBottom: '8px', color: 'var(--color-light)' }}>
                             Benzerlik Oranı
                         </Typography>
-                        <div style={{ 
-                            height: '8px', 
-                            background: 'var(--color-coral)', 
-                            width: '76%', 
-                            borderRadius: '4px',
-                            marginBottom: '4px'
-                        }} />
+                        <LinearProgress
+                            variant="determinate"
+                            value={76}
+                            sx={{
+                                height: 8,
+                                borderRadius: 4,
+                                marginBottom: 0.5,
+                                backgroundColor: 'rgba(227, 75, 38, 0.1)',
+                                '& .MuiLinearProgress-bar': {
+                                    backgroundColor: `rgba(227, 75, 38, ${0.4 + (76/100) * 0.6})`,
+                                    transition: 'all 0.4s ease'
+                                }
+                            }}
+                        />
                         <Typography variant="body2" style={{ color: 'var(--color-teal)' }}>
                             76% benzer
                         </Typography>
@@ -248,13 +270,20 @@ export default function VoiceComparison() {
                         <Typography variant="body2" style={{ marginBottom: '8px', color: 'var(--color-light)' }}>
                             Frekans Uyumu
                         </Typography>
-                        <div style={{ 
-                            height: '8px', 
-                            background: 'var(--color-teal)', 
-                            width: '65%', 
-                            borderRadius: '4px',
-                            marginBottom: '4px'
-                        }} />
+                        <LinearProgress
+                            variant="determinate"
+                            value={65}
+                            sx={{
+                                height: 8,
+                                borderRadius: 4,
+                                marginBottom: 0.5,
+                                backgroundColor: 'rgba(102, 165, 173, 0.1)',
+                                '& .MuiLinearProgress-bar': {
+                                    backgroundColor: `rgba(102, 165, 173, ${0.4 + (65/100) * 0.6})`,
+                                    transition: 'all 0.4s ease'
+                                }
+                            }}
+                        />
                         <Typography variant="body2" style={{ color: 'var(--color-teal)' }}>
                             Orta düzey uyum
                         </Typography>
@@ -264,13 +293,20 @@ export default function VoiceComparison() {
                         <Typography variant="body2" style={{ marginBottom: '8px', color: 'var(--color-light)' }}>
                             Mos Değeri
                         </Typography>
-                        <div style={{ 
-                            height: '8px', 
-                            background: 'var(--color-coral)', 
-                            width: '85%', 
-                            borderRadius: '4px',
-                            marginBottom: '4px'
-                        }} />
+                        <LinearProgress
+                            variant="determinate"
+                            value={85}
+                            sx={{
+                                height: 8,
+                                borderRadius: 4,
+                                marginBottom: 0.5,
+                                backgroundColor: 'rgba(227, 75, 38, 0.1)',
+                                '& .MuiLinearProgress-bar': {
+                                    backgroundColor: `rgba(227, 75, 38, ${0.4 + (85/100) * 0.6})`,
+                                    transition: 'all 0.4s ease'
+                                }
+                            }}
+                        />
                         <Typography variant="body2" style={{ color: 'var(--color-teal)' }}>
                             3.54
                         </Typography>

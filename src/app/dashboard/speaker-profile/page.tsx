@@ -79,47 +79,47 @@ export default function SpeakerProfile() {
     const data = [
         {
             icon: 'tag',
-            label: 'Müşteri No:',
+            label: 'Müşteri No',
             value: '100123'
         },
         {
             icon: 'credit_card',
-            label: 'Kimlik No:',
+            label: 'Kimlik No',
             value: '98******01'
         },
         {
             icon: 'account_circle',
-            label: 'Ad Soyad:',
+            label: 'Ad Soyad',
             value: 'Test User'
         },
         {
             icon: 'calendar_month',
-            label: 'İlk İzma Alınma Tarihi:',
+            label: 'İlk İzma Alınma Tarihi',
             value: '2024-04-27'
         },
         {
             icon: 'verified_user',
-            label: 'Durumu:',
+            label: 'Durumu',
             value: 'Aktif'
         },
         {
             icon: 'sentiment_satisfied',
-            label: 'Genel Duygu Durumu:',
+            label: 'Genel Duygu Durumu',
             value: 'Mutlu'
         },
         {
             icon: 'person',
-            label: 'Cinsiyet:',
+            label: 'Cinsiyet',
             value: 'Erkek'
         },
         {
             icon: 'timer',
-            label: 'Müşteri olma Süresi:',
+            label: 'Müşteri olma Süresi',
             value: '1 Yıl 2 Ay 5 Gün'
         },
         {
             icon: 'graphic_eq',
-            label: 'Ses Frekansı:',
+            label: 'Ses Frekansı',
             value: '450 Hz'
         },
     ]
@@ -309,7 +309,7 @@ export default function SpeakerProfile() {
                                                     display: 'flex',
                                                     alignItems: 'center',
                                                     gap: '4px',
-                                                    color: row.emotion === 'Mutlu' ? 'var(--color-coral)' :
+                                                    color: row.emotion === 'Mutlu' ? 'var(--opan-green)' :
                                                         row.emotion === 'Üzgün' ? '#E34B26' : 'var(--color-neutral)'
                                                 }}>
                                                     <span className="material-symbols-outlined">

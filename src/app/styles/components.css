@@ -60,7 +60,6 @@
 }
 
 .table__row:hover {
-  background: var(--gradient-accent);
   transform: scale(1.01);
 }
 
@@ -92,21 +91,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--gradient-accent);
   opacity: 0;
   transition: var(--transition-slow);
   z-index: 0;
 }
 
-.info-row:hover::before {
-  opacity: 0.9;
-}
+
 
 .info-row:hover {
   border-color: var(--accent-2);
   transform: translateY(-2px) scale(1.01);
   box-shadow: var(--shadow-lg);
-  color: var(--nav-background);
 }
 
 .info-row__content {

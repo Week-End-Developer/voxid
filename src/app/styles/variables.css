@@ -8,7 +8,7 @@
   
   /* Enhanced Gradients */
   --gradient-nav: linear-gradient(165deg, #21263A 0%, #2d3347 50%, #21263A 100%);
-  --gradient-accent: linear-gradient(135deg, #C7CEE8 0%, #D0D34D 50%, #C7CEE8 100%);
+  --gradient-accent: linear-gradient(165deg, #F0F4F2 0%, #D6D9D8 50%, #F0F4F2 100%);
   --gradient-subtle: linear-gradient(165deg, #F0F4F2 0%, #D6D9D8 50%, #F0F4F2 100%);
   --gradient-active: linear-gradient(135deg, #D0D34D 0%, #C7CEE8 50%, #D0D34D 100%);
   
@@ -35,7 +35,7 @@
     --foreground: #F0F4F2;
     --border-1: rgba(214, 217, 216, 0.2);
     --gradient-nav: linear-gradient(165deg, #21263A 0%, #2d3347 50%, #21263A 100%);
-    --gradient-accent: linear-gradient(135deg, #D0D34D 0%, #C7CEE8 50%, #D0D34D 100%);
+    --gradient-accent: linear-gradient(165deg, #D0D34D 0%, #E6E9A0 50%, #D0D34D 100%);
     --gradient-subtle: linear-gradient(165deg, #2d3347 0%, #21263A 50%, #2d3347 100%);
     --gradient-active: linear-gradient(135deg, #C7CEE8 0%, #D0D34D 50%, #C7CEE8 100%);
     --glass-background: rgba(33, 38, 58, 0.7);

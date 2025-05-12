@@ -23,9 +23,9 @@
   color: var(--foreground);
   padding-bottom: 12px;
   border-bottom: 2px solid var(--border-1);
-  margin-bottom: 24px;
   font-weight: 600;
   letter-spacing: -0.5px;
+  width: 100%;
 }
 
 .table-container {

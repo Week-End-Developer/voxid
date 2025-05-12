@@ -30,27 +30,47 @@ export default function Overview() {
         <div className="dashboard">
             <div className="dashboard__row">
                 <div className="card dashboard__analytics">
-                    <h2 className="card__header">VoxID Analitik</h2>
+                    <div className="dashboard__analytics-header">
+                        <h2 className="card__header">VoxID Analitik</h2>
+                    </div>
                     <div className="dashboard__success-rate">
-                        Toplam <span className="dashboard__highlight">92.3%</span> Başarı Oranı
+                        <div className="dashboard__success-rate-content">
+                            <span className="dashboard__success-rate-label">Toplam Başarı Oranı</span>
+                            <span className="dashboard__success-rate-value">92.3%</span>
+                        </div>
+                        <div className="dashboard__success-rate-bar">
+                            <div className="dashboard__success-rate-progress" style={{ width: '92.3%' }}></div>
+                        </div>
                     </div>
                     <div className="dashboard__stats">
                         <div className="dashboard__stat-item">
+                            <div className="dashboard__stat-icon-wrapper">
+                                <span className="material-symbols-outlined dashboard__stat-icon">record_voice_over</span>
+                            </div>
                             <span className="dashboard__stat-value">25%</span>
                             <span className="dashboard__stat-label">Tanımlı Ses</span>
                         </div>
                         <div className="dashboard__divider"></div>
                         <div className="dashboard__stat-item">
+                            <div className="dashboard__stat-icon-wrapper">
+                                <span className="material-symbols-outlined dashboard__stat-icon">forum</span>
+                            </div>
                             <span className="dashboard__stat-value">1.9K</span>
                             <span className="dashboard__stat-label">Görüşme</span>
                         </div>
                         <div className="dashboard__divider"></div>
                         <div className="dashboard__stat-item">
+                            <div className="dashboard__stat-icon-wrapper">
+                                <span className="material-symbols-outlined dashboard__stat-icon">person_add</span>
+                            </div>
                             <span className="dashboard__stat-value">112</span>
                             <span className="dashboard__stat-label">Yeni Profil</span>
                         </div>
                         <div className="dashboard__divider"></div>
                         <div className="dashboard__stat-item">
+                            <div className="dashboard__stat-icon-wrapper">
+                                <span className="material-symbols-outlined dashboard__stat-icon">verified</span>
+                            </div>
                             <span className="dashboard__stat-value">89%</span>
                             <span className="dashboard__stat-label">Doğrulama</span>
                         </div>

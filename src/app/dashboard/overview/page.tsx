@@ -29,7 +29,7 @@ export default function Overview() {
     return (
         <div className="dashboard">
             <div className="dashboard__row">
-                <div className="styled-card-1 glass shadow--sm hover-lift">
+                <div className="styled-card-1 glass shadow--sm hover-lift" style={{ flex: '1 1' }}>
                     <div className="dashboard__analytics-header">
                         <h2 className="card__header">VoxID Analitik</h2>
                     </div>

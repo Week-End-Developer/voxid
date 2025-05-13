@@ -37,6 +37,9 @@ const customStyles = {
         boxShadow: 'var(--shadow-sm)',
         padding: '24px',
         transition: 'all 0.3s ease',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
         '&:hover': {
             boxShadow: 'var(--shadow-md)',
             borderColor: 'var(--accent-3)',
@@ -60,6 +63,12 @@ const customStyles = {
         background: 'var(--glass-background)',
         borderRadius: '12px',
         border: '1px solid var(--glass-border)',
+        transition: 'all 0.3s ease',
+        height: '100%',
+        '&:hover': {
+            borderColor: 'var(--accent-2)',
+            transform: 'translateY(-2px)',
+        }
     },
     metricValue: {
         fontSize: '32px',
@@ -215,41 +224,104 @@ export default function Monitoring() {
             </Paper>
 
             {/* System Metrics */}
-            <Box sx={{ display: 'flex', gap: 3 }}>
-                <Box sx={{ flex: 1 }}>
+            <Box sx={{ 
+                display: 'flex', 
+                gap: 3,
+                flexDirection: { xs: 'column', md: 'row' },
+                minHeight: { md: '400px' }
+            }}>
+                <Box sx={{ 
+                    flex: { xs: '1', md: '1' },
+                    minWidth: { xs: '100%', md: '0' },
+                    display: 'flex',
+                    flexDirection: 'column'
+                }}>
                     <Paper sx={customStyles.card}>
                         <Typography sx={customStyles.header}>Analiz Metrikleri</Typography>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                            <Box sx={customStyles.metricCard}>
+                        <Box sx={{ 
+                            display: 'flex', 
+                            flexDirection: 'column', 
+                            gap: '16px',
+                            flex: 1
+                        }}>
+                            <Box sx={{
+                                ...customStyles.metricCard,
+                                flex: 1
+                            }}>
                                 <Typography sx={customStyles.metricLabel}>
                                     Ortalama Analiz Süresi
                                 </Typography>
-                                <Typography sx={customStyles.metricValue}>2.65s</Typography>
+                                <Typography sx={{
+                                    ...customStyles.metricValue,
+                                    fontSize: { xs: '28px', sm: '32px', md: '36px' }
+                                }}>2.65s</Typography>
                             </Box>
-                            <Box sx={customStyles.metricCard}>
+                            <Box sx={{
+                                ...customStyles.metricCard,
+                                flex: 1
+                            }}>
                                 <Typography sx={customStyles.metricLabel}>
                                     Başarılı Analiz Oranı
                                 </Typography>
-                                <Typography sx={customStyles.metricValue}>97.5%</Typography>
+                                <Typography sx={{
+                                    ...customStyles.metricValue,
+                                    fontSize: { xs: '28px', sm: '32px', md: '36px' }
+                                }}>97.5%</Typography>
                             </Box>
                         </Box>
                     </Paper>
                 </Box>
-                <Box sx={{ flex: 1 }}>
+                <Box sx={{ 
+                    flex: { xs: '1', md: '1' },
+                    minWidth: { xs: '100%', md: '0' },
+                    display: 'flex',
+                    flexDirection: 'column'
+                }}>
                     <Paper sx={customStyles.card}>
                         <Typography sx={customStyles.header}>Sistem Metrikleri</Typography>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                            <Box sx={customStyles.metricCard}>
-                                <Typography sx={customStyles.metricLabel}>
+                        <Box sx={{ 
+                            display: 'flex', 
+                            flexDirection: 'column', 
+                            gap: '16px',
+                            flex: 1
+                        }}>
+                            <Box sx={{
+                                ...customStyles.metricCard,
+                                flex: 1,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <Typography sx={{
+                                    ...customStyles.metricLabel,
+                                    textAlign: 'center'
+                                }}>
                                     Aktif Kullanıcı Sayısı
                                 </Typography>
-                                <Typography sx={customStyles.metricValue}>24</Typography>
+                                <Typography sx={{
+                                    ...customStyles.metricValue,
+                                    fontSize: { xs: '28px', sm: '32px', md: '36px' },
+                                    textAlign: 'center'
+                                }}>24</Typography>
                             </Box>
-                            <Box sx={customStyles.metricCard}>
-                                <Typography sx={customStyles.metricLabel}>
+                            <Box sx={{
+                                ...customStyles.metricCard,
+                                flex: 1,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <Typography sx={{
+                                    ...customStyles.metricLabel,
+                                    textAlign: 'center'
+                                }}>
                                     Toplam Analiz Sayısı (Bugün)
                                 </Typography>
-                                <Typography sx={customStyles.metricValue}>1,247</Typography>
+                                <Typography sx={{
+                                    ...customStyles.metricValue,
+                                    fontSize: { xs: '28px', sm: '32px', md: '36px' },
+                                    textAlign: 'center'
+                                }}>1,247</Typography>
                             </Box>
                         </Box>
                     </Paper>

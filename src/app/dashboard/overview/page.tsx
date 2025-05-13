@@ -29,10 +29,9 @@ export default function Overview() {
     return (
         <div className="dashboard">
             <div className="dashboard__row">
-                <div className="card dashboard__analytics glass shadow--sm hover-lift">
+                <div className="styled-card-1 glass shadow--sm hover-lift">
                     <div className="dashboard__analytics-header">
                         <h2 className="card__header">VoxID Analitik</h2>
-                        <span className="material-symbols-outlined dashboard__analytics-icon text-accent">analytics</span>
                     </div>
                     <div className="dashboard__success-rate glass">
                         <div className="dashboard__success-rate-content">
@@ -75,7 +74,7 @@ export default function Overview() {
                     </div>
                 </div>
 
-                <div className="card dashboard__daily glass shadow--sm hover-lift">
+                <div className="styled-card-1 dashboard__daily glass shadow--sm hover-lift">
                     <h2 className="card__header">Ortalama Günlük İşlem</h2>
                     <div className="dashboard__daily-stats">
                         <span className="dashboard__daily-value">2.310</span>
@@ -84,12 +83,22 @@ export default function Overview() {
                             <span className="dashboard__trend-value">5.2%</span>
                             <span className="dashboard__trend-label">önceki güne göre</span>
                         </div>
+                        <div className="dashboard__daily-breakdown">
+                            <div className="info-row glass hover-scale">
+                                <span className="info-row__label">Gündüz (08:00-17:00)</span>
+                                <span className="info-row__value">1.850</span>
+                            </div>
+                            <div className="info-row glass hover-scale">
+                                <span className="info-row__label">Akşam (17:00-00:00)</span>
+                                <span className="info-row__value">460</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div className="dashboard__row">
-                <div className="card dashboard__records glass shadow--sm hover-lift">
+                <div className="styled-card-1 dashboard__records glass shadow--sm hover-lift">
                     <h2 className="card__header">Son İşlenen Ses Kayıtları</h2>
                     <div className="dashboard__records-value">1.240</div>
                     <div className="dashboard__trend dashboard__trend--negative">
@@ -109,7 +118,7 @@ export default function Overview() {
                     </div>
                 </div>
 
-                <div className="card dashboard__service glass shadow--sm hover-lift">
+                <div className="styled-card-1 dashboard__service glass shadow--sm hover-lift">
                     <h2 className="card__header">Servis Sorgulanma Kayıtları</h2>
                     <div className="dashboard__service-value">
                         15.896 <span className="dashboard__service-period">son 7 gün</span>
@@ -130,7 +139,7 @@ export default function Overview() {
                     </div>
                 </div>
 
-                <div className="card dashboard__load glass shadow--sm hover-lift">
+                <div className="styled-card-1 dashboard__load glass shadow--sm hover-lift">
                     <h2 className="card__header">Sistem Yoğunluk Oranı Anlık</h2>
                     <div className="dashboard__gauge">
                         <GaugeContainer
@@ -154,6 +163,16 @@ export default function Overview() {
                                 85%
                             </text>
                         </GaugeContainer>
+                    </div>
+                    <div className="dashboard__load-stats">
+                        <div className="info-row glass hover-scale">
+                            <span className="info-row__label">İşlem Kuyruğu</span>
+                            <span className="info-row__value">24</span>
+                        </div>
+                        <div className="info-row glass hover-scale">
+                            <span className="info-row__label">Yanıt Süresi</span>
+                            <span className="info-row__value">1.2s</span>
+                        </div>
                     </div>
                 </div>
             </div>

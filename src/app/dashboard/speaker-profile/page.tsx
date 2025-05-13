@@ -125,8 +125,8 @@ export default function SpeakerProfile() {
     ]
     return (<>
 
-        <div style={{ color: 'var(--color-light)', display: 'flex', flexWrap: 'wrap', gap: '20px', marginBottom: '20px' }}>
-            <div className="styled-card-1" style={{ flex: '1', minWidth: '500px', maxWidth: '800px', borderRadius: '16px' }}>
+        <div style={{ color: 'var(--color-light)', display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '20px' }}>
+            <div className="styled-card-1" style={{ flex: '1', width: '100%', borderRadius: '16px' }}>
                 <div className="card-header">Kullanıcı</div>
                 <div style={{ display: 'flex', gap: '24px' }}>
                     {/* Left side - Profile Image and Stats */}
@@ -180,10 +180,9 @@ export default function SpeakerProfile() {
                     {/* Right side - User Info Grid */}
                     <div style={{
                         flex: 1,
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                        display: 'flex',
                         gap: '8px',
-                        alignContent: 'start'
+                        flexWrap: 'wrap'
                     }}>
                         {data.map((item, index) => (
                             <div
@@ -194,7 +193,8 @@ export default function SpeakerProfile() {
                                     transition: 'background-color 0.2s ease',
                                     cursor: 'pointer',
                                     padding: '8px',
-                                    borderRadius: '8px'
+                                    borderRadius: '8px',
+                                    width: '400px'
                                 }}
                             >
                                 <div className="align-center" style={{ gap: '6px' }}>
